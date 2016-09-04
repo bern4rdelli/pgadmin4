@@ -6,8 +6,8 @@ ENV PGADMIN_HOME=/usr/local/lib/python2.7/site-packages/pgadmin4 \
   BASE_URL=https://ftp.postgresql.org/pub/pgadmin3/pgadmin4/v1.0-rc1/pip/pgadmin4-1.0rc1-py2-none-any.whl
 
 RUN apk add --no-cache postgresql-dev gcc musl-dev
-
 RUN pip --no-cache-dir install ${BASE_URL}
+RUN mkdir -p /pgadmin4/queries
 
 WORKDIR ${PGADMIN_HOME}
 
